@@ -65,8 +65,7 @@ class StepTracker extends StatelessWidget {
   Widget _buildCircleChild(int index) {
     switch (steps[index].state) {
       case TrackerState.complete:
-        return 
-        Icon(
+        return Icon(
           Icons.check_rounded,
           color: Colors.white,
           size: circleSize / 1.1,
@@ -103,8 +102,8 @@ class StepTracker extends StatelessWidget {
         child: Container(
           height: circleSize,
           width: circleSize,
-
-          decoration: BoxDecoration(color: _circleColor(index), border: Border.all(width: 1)),
+          decoration: BoxDecoration(
+              color: _circleColor(index), border: Border.all(width: 3)),
           child: Center(
             child: _buildCircleChild(index),
           ),
@@ -159,9 +158,8 @@ class StepTracker extends StatelessWidget {
           child: Container(
         height: dotSize,
         width: dotSize,
-        decoration: BoxDecoration(color: _circleColor(index),
-        border: Border.all(width: 1)),
-        
+        decoration: BoxDecoration(
+            color: _circleColor(index), border: Border.all(width: 1)),
       )),
     );
   }
