@@ -52,7 +52,6 @@ class StepTracker extends StatelessWidget {
           separatorBuilder: (context, index) => Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                  decoration: BoxDecoration(border: Border.all(width: 3,color: Colors.grey) ) ,
                   width: pipeSize,
                   margin: EdgeInsets.only(top: circleSize / 2.2),
                   child: Divider(
@@ -82,7 +81,7 @@ class StepTracker extends StatelessWidget {
           (index + 1).toString(),
           style: TextStyle(
               fontWeight: FontWeight.w600,
-              color: Colors.grey.withOpacity(0.8)),
+              color: Colors.black.withOpacity(0.8)),
         );
     }
   }
@@ -103,8 +102,7 @@ class StepTracker extends StatelessWidget {
         child: Container(
           height: circleSize,
           width: circleSize,
-          decoration: BoxDecoration(
-              color: _circleColor(index), border: Border.all(width: 3,color: Colors.grey)),
+          decoration: BoxDecoration(color: _circleColor(index)),
           child: Center(
             child: _buildCircleChild(index),
           ),
@@ -120,7 +118,6 @@ class StepTracker extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                
                 steps[index].title,
                 steps[index].description != null
                     ? Text(
@@ -160,8 +157,7 @@ class StepTracker extends StatelessWidget {
           child: Container(
         height: dotSize,
         width: dotSize,
-        decoration: BoxDecoration(
-            color: _circleColor(index), border: Border.all(width: 1,color: Colors.grey)),
+        decoration: BoxDecoration(color: _circleColor(index)),
       )),
     );
   }
