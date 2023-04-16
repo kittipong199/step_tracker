@@ -230,7 +230,7 @@ class StepTracker extends StatelessWidget {
             // decoration:BoxDecoration(border: Border.all(width: 1,color: Colors.grey)),
               height: pipeSize,
               margin: EdgeInsets.only(left: dotSize / 2.2),
-              decoration: BoxDecoration(border: _borderColor(index)),
+              decoration: BoxDecoration(border: Border.all(width: 1,color: Colors.grey)),
               child: VerticalDivider(
                   thickness: 1.5, width: 1, color: _circleColor(index),))),
       itemCount: steps.length);
