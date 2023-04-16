@@ -58,7 +58,7 @@ class StepTracker extends StatelessWidget {
                   width: pipeSize,
                   margin: EdgeInsets.only(top: circleSize / 2.2),
                   child: Divider(
-                      thickness: 1.5, height: 1, color: _circleColor(index)),
+                      thickness: 1.5, height: 1, color: _lineColor(index)),
                 ),
               ),
           itemCount: steps.length),
@@ -102,6 +102,19 @@ class StepTracker extends StatelessWidget {
         return Colors.white.withOpacity(0.5);
     }
   }
+
+   Color _lineColor(int index) {
+    TrackerState state = steps[index].state;
+    switch (state) {
+      case TrackerState.complete:
+        return selectedColor;
+      case TrackerState.disabled:
+        return unSelectedColor;
+      case TrackerState.none:
+        return Colors.grey.withOpacity(0.5);
+    }
+  }
+
 
   Border _borderColor(int index){
     TrackerState state = steps[index].state;
