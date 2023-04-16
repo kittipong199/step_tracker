@@ -42,6 +42,8 @@ class StepTracker extends StatelessWidget {
     );
   }
 
+
+  // กรอบของ เส้น ระหว่าง step
   Widget _buildIndexedHorizontal() {
     return Container(
       constraints: BoxConstraints(maxHeight: 70),
@@ -52,7 +54,7 @@ class StepTracker extends StatelessWidget {
           separatorBuilder: (context, index) => Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                   decoration: BoxDecoration(border: Border.all(width: 2,color: Colors.grey)),
+                  //  decoration: BoxDecoration(border: Border.all(width: 2,color: Colors.grey)),
                   width: pipeSize,
                   margin: EdgeInsets.only(top: circleSize / 2.2),
                   child: Divider(
