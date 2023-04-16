@@ -99,6 +99,19 @@ class StepTracker extends StatelessWidget {
     }
   }
 
+  Border _borderColor(int index){
+    TrackerState state = steps[index].state;
+    switch (state) {
+      case TrackerState.complete:
+        return Border.all(width: 1,color: Colors.grey);
+      case TrackerState.disabled:
+        return Border.all(width: 1,color: Colors.grey);
+      case TrackerState.none:
+        return Border.all(width: 1,color: Colors.grey);
+    }
+
+  }
+
   Widget _buildCircle(int index) => ClipOval(
         child: Container(
           height: circleSize,
@@ -158,7 +171,7 @@ class StepTracker extends StatelessWidget {
           child: Container(
         height: dotSize,
         width: dotSize,
-        decoration: BoxDecoration(color: _circleColor(index)),
+        decoration: BoxDecoration(color: _circleColor(index),border: _borderColor(index)),
       )),
     );
   }
@@ -197,10 +210,11 @@ class StepTracker extends StatelessWidget {
       separatorBuilder: (context, index) => Align(
           alignment: Alignment.centerLeft,
           child: Container(
+            decoration:BoxDecoration(border: Border.all(width: 1,color: Colors.grey)),
               height: pipeSize,
               margin: EdgeInsets.only(left: dotSize / 2.2),
               child: VerticalDivider(
-                  thickness: 1.5, width: 1, color: _circleColor(index)))),
+                  thickness: 1.5, width: 1, color: _circleColor(index),))),
       itemCount: steps.length);
 
   @override
