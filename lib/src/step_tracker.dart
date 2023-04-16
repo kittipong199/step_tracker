@@ -82,7 +82,7 @@ class StepTracker extends StatelessWidget {
           (index + 1).toString(),
           style: TextStyle(
               fontWeight: FontWeight.w600,
-              color: Colors.black.withOpacity(0.8)),
+              color: Colors.grey.withOpacity(0.8)),
         );
     }
   }
