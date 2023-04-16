@@ -129,6 +129,8 @@ class StepTracker extends StatelessWidget {
 
   }
 
+
+    // เส้นขอบ
   Widget _buildCircle(int index) => ClipOval(
         child: Container(
           height: circleSize,
