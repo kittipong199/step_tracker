@@ -52,7 +52,7 @@ class StepTracker extends StatelessWidget {
           separatorBuilder: (context, index) => Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                  decoration: BoxDecoration(border: Border.all(width: 2,color: Colors.grey)),
+                  // decoration: BoxDecoration(border: Border.all(width: 2,color: Colors.grey)),
                   width: pipeSize,
                   margin: EdgeInsets.only(top: circleSize / 2.2),
                   child: Divider(
