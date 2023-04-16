@@ -21,6 +21,7 @@ class StepTracker extends StatelessWidget {
       this.pipeSize = 30.0,
       this.selectedColor = Colors.green,
       this.unSelectedColor = Colors.red,
+      this.backgroupColor = Colors.white,
       this.stepTrackerType = StepTrackerType.dotVertical})
       : assert(dotSize <= 20),
         assert(pipeSize >= 25);
@@ -31,6 +32,7 @@ class StepTracker extends StatelessWidget {
   final double pipeSize;
   final Color selectedColor;
   final Color unSelectedColor;
+  final Color backgroupColor;
   final StepTrackerType stepTrackerType;
 
   Widget _buildIndexedHorizontalHeader(int index) {
@@ -92,7 +94,7 @@ class StepTracker extends StatelessWidget {
       case TrackerState.disabled:
         return unSelectedColor;
       case TrackerState.none:
-        return Colors.grey.withOpacity(0.5);
+        return backgroupColor;
     }
   }
 
