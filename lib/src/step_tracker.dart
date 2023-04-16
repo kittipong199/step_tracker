@@ -52,6 +52,7 @@ class StepTracker extends StatelessWidget {
           separatorBuilder: (context, index) => Align(
                 alignment: Alignment.topCenter,
                 child: Container(
+                  decoration: BoxDecoration(border: Border.all(width: 3,color: Colors.grey) ) ,
                   width: pipeSize,
                   margin: EdgeInsets.only(top: circleSize / 2.2),
                   child: Divider(
@@ -119,6 +120,7 @@ class StepTracker extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                
                 steps[index].title,
                 steps[index].description != null
                     ? Text(
