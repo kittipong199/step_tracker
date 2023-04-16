@@ -103,7 +103,7 @@ class StepTracker extends StatelessWidget {
           height: circleSize,
           width: circleSize,
           decoration: BoxDecoration(
-              color: _circleColor(index), border: Border.all(width: 3)),
+              color: _circleColor(index), border: Border.all(width: 3,color: Colors.grey)),
           child: Center(
             child: _buildCircleChild(index),
           ),
