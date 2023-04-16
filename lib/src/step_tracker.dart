@@ -133,7 +133,7 @@ class StepTracker extends StatelessWidget {
         child: Container(
           height: circleSize,
           width: circleSize,
-          decoration: BoxDecoration(color: _circleColor(index)),
+          decoration: BoxDecoration(color: _circleColor(index),border: Border.all(width: 1,color: Colors.grey)),
           child: Center(
             child: _buildCircleChild(index),
           ),
@@ -176,6 +176,7 @@ class StepTracker extends StatelessWidget {
             child: Container(
               height: pipeSize,
               margin: EdgeInsets.only(left: circleSize / 2.2),
+              decoration: BoxDecoration(border: Border.all(width: 1,color: Colors.grey)),
               child: VerticalDivider(
                   thickness: 1.5, width: 1, color: _circleColor(index)),
             ),
@@ -188,7 +189,7 @@ class StepTracker extends StatelessWidget {
           child: Container(
         height: dotSize,
         width: dotSize,
-        decoration: BoxDecoration(border: _borderColor(index)),
+        decoration: BoxDecoration(border: Border.all(width: 1,color: Colors.grey)),
       )),
     );
   }
