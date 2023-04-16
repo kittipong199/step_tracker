@@ -89,6 +89,8 @@ class StepTracker extends StatelessWidget {
     }
   }
 
+
+  // สี ทั้งหมด 
   Color _circleColor(int index) {
     TrackerState state = steps[index].state;
     switch (state) {
@@ -118,7 +120,7 @@ class StepTracker extends StatelessWidget {
         child: Container(
           height: circleSize,
           width: circleSize,
-          decoration: BoxDecoration(color: _circleColor(index)),
+          decoration: BoxDecoration(color: _circleColor(index),border: Border.all(width: 1 , color: Colors.grey)),
           child: Center(
             child: _buildCircleChild(index),
           ),
