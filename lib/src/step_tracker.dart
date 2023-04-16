@@ -95,7 +95,7 @@ class StepTracker extends StatelessWidget {
       case TrackerState.disabled:
         return unSelectedColor;
       case TrackerState.none:
-        return Colors.green.withOpacity(0.5);
+        return Colors.grey.withOpacity(0.5);
     }
   }
 
@@ -214,7 +214,7 @@ class StepTracker extends StatelessWidget {
               height: pipeSize,
               margin: EdgeInsets.only(left: dotSize / 2.2),
               child: VerticalDivider(
-                  thickness: 1.5, width: 1, color: _circleColor(index),))),
+                  thickness: 1.5, width: 1, color: _circleColor(index)))),
       itemCount: steps.length);
 
   @override
