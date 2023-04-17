@@ -17,7 +17,7 @@ class StepTracker extends StatelessWidget {
       {Key? key,
       required this.steps,
       this.dotSize = 9,
-      this.circleSize = 24,
+      this.circleSize = 24, // ขนาดวงกลม
       this.pipeSize = 30.0,
       this.selectedColor = Colors.green,
       this.unSelectedColor = Colors.red,
@@ -64,8 +64,7 @@ class StepTracker extends StatelessWidget {
           itemCount: steps.length),
     );
   }
-
- // icon action
+  // icon
   Widget _buildCircleChild(int index) {
     switch (steps[index].state) {
       case TrackerState.complete:
@@ -81,19 +80,15 @@ class StepTracker extends StatelessWidget {
           size: circleSize / 1.1,
         );
       case TrackerState.none:
-        return ClipOval(
-            child: Align(
-              heightFactor: 100,
-              widthFactor: 80,
-          child: Text(
-            (index + 1).toString(),
-            style: TextStyle(
-                fontWeight: FontWeight.w600,
-                color: Colors.grey.withOpacity(0.8)),
-          ),
-        ));
+        return Text(
+          (index + 1).toString(),
+          style: TextStyle(
+              fontWeight: FontWeight.w600,
+              color: Colors.grey.withOpacity(0.8)),
+        );
     }
   }
+
 
   // สี ทั้งหมด 
   Color _circleColor(int index) {
@@ -135,16 +130,13 @@ class StepTracker extends StatelessWidget {
   }
 
 
-   // เส้นขอบ
+    // เส้นขอบ
   Widget _buildCircle(int index) => ClipOval(
         child: Container(
           height: circleSize,
-            width: circleSize,
-             decoration: BoxDecoration(color: _circleColor(index),border: Border.all(width: 1,color: Colors.grey)),
-          child: Align(
-            heightFactor: 10,
-            widthFactor: 10,
-           
+          width: circleSize,
+          decoration: BoxDecoration(color: _circleColor(index),border: Border.all(width: 1,color: Colors.grey)),
+          child: Center(
             child: _buildCircleChild(index),
           ),
         ),
@@ -196,15 +188,11 @@ class StepTracker extends StatelessWidget {
   Widget _buildDot(int index) {
     return ClipOval(
       child: ClipOval(
-          child: Align(
-            heightFactor: 200,
-            widthFactor: 150,
-            child: Container(
-                  height: dotSize,
-                  width: dotSize,
-                  decoration: BoxDecoration(color: _circleColor(index)),
-                ),
-          )),
+          child: Container(
+        height: dotSize,
+        width: dotSize,
+        decoration: BoxDecoration(color: _circleColor(index)),
+      )),
     );
   }
 
