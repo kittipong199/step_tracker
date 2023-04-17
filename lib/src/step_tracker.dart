@@ -83,8 +83,8 @@ class StepTracker extends StatelessWidget {
       case TrackerState.none:
         return ClipOval(
             child: Align(
-              heightFactor: 10,
-              widthFactor: 8,
+              heightFactor: 100,
+              widthFactor: 80,
           child: Text(
             (index + 1).toString(),
             style: TextStyle(
