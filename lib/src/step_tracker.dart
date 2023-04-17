@@ -65,33 +65,27 @@ class StepTracker extends StatelessWidget {
     );
   }
 
-  // icon action
+ // icon action
   Widget _buildCircleChild(int index) {
     switch (steps[index].state) {
       case TrackerState.complete:
-        return CircleAvatar(
-          child: Icon(
-            Icons.check_rounded,
-            color: Colors.white,
-            size: circleSize / 1.1,
-          ),
+        return Icon(
+          Icons.check_rounded,
+          color: Colors.white,
+          size: circleSize / 1.1,
         );
       case TrackerState.disabled:
-        return CircleAvatar(
-          child: Icon(
-            Icons.close_rounded,
-            color: Colors.white,
-            size: circleSize / 1.1,
-          ),
+        return Icon(
+          Icons.close_rounded,
+          color: Colors.white,
+          size: circleSize / 1.1,
         );
       case TrackerState.none:
-        return CircleAvatar(
-          child: Text(
-            (index + 1).toString(),
-            style: TextStyle(
-                fontWeight: FontWeight.w600,
-                color: Colors.grey.withOpacity(0.8)),
-          ),
+        return Text(
+          (index + 1).toString(),
+          style: TextStyle(
+              fontWeight: FontWeight.w600,
+              color: Colors.grey.withOpacity(0.8)),
         );
     }
   }
@@ -138,12 +132,14 @@ class StepTracker extends StatelessWidget {
 
     // เส้นขอบ
   Widget _buildCircle(int index) => ClipOval(
-        child: Container(
-          height: circleSize,
-          width: circleSize,
-          decoration: BoxDecoration(color: _circleColor(index),border: Border.all(width: 2,color: Colors.grey)),
-          child: Center(
-            child: _buildCircleChild(index),
+        child: CircleAvatar(
+          child: Container(
+            height: circleSize,
+            width: circleSize,
+            decoration: BoxDecoration(color: _circleColor(index),border: Border.all(width: 4,color: Colors.grey)),
+            child: Center(
+              child: _buildCircleChild(index),
+            ),
           ),
         ),
       );
