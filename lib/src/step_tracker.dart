@@ -65,30 +65,36 @@ class StepTracker extends StatelessWidget {
     );
   }
 
+  // icon action
   Widget _buildCircleChild(int index) {
     switch (steps[index].state) {
       case TrackerState.complete:
-        return Icon(
-          Icons.check_rounded,
-          color: Colors.white,
-          size: circleSize / 1.1,
+        return CircleAvatar(
+          child: Icon(
+            Icons.check_rounded,
+            color: Colors.white,
+            size: circleSize / 1.1,
+          ),
         );
       case TrackerState.disabled:
-        return Icon(
-          Icons.close_rounded,
-          color: Colors.white,
-          size: circleSize / 1.1,
+        return CircleAvatar(
+          child: Icon(
+            Icons.close_rounded,
+            color: Colors.white,
+            size: circleSize / 1.1,
+          ),
         );
       case TrackerState.none:
-        return Text(
-          (index + 1).toString(),
-          style: TextStyle(
-              fontWeight: FontWeight.w600,
-              color: Colors.grey.withOpacity(0.8)),
+        return CircleAvatar(
+          child: Text(
+            (index + 1).toString(),
+            style: TextStyle(
+                fontWeight: FontWeight.w600,
+                color: Colors.grey.withOpacity(0.8)),
+          ),
         );
     }
   }
-
 
   // สี ทั้งหมด 
   Color _circleColor(int index) {
