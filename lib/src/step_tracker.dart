@@ -135,17 +135,17 @@ class StepTracker extends StatelessWidget {
   }
 
 
-   Widget _buildCircle(int index) => ClipOval(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Container(
-            
-            height: circleSize,
+   // เส้นขอบ
+  Widget _buildCircle(int index) => ClipOval(
+        child: Container(
+          height: circleSize,
             width: circleSize,
-            decoration: BoxDecoration(color: _circleColor(index),border: Border.all(width: 1,color: Colors.grey)),
-            child: Center(
-              child: _buildCircleChild(index),
-            ),
+             decoration: BoxDecoration(color: _circleColor(index),border: Border.all(width: 1,color: Colors.grey)),
+          child: Align(
+            heightFactor: 10,
+            widthFactor: 10,
+           
+            child: _buildCircleChild(index),
           ),
         ),
       );
