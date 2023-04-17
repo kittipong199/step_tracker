@@ -188,11 +188,16 @@ class StepTracker extends StatelessWidget {
   Widget _buildDot(int index) {
     return ClipOval(
       child: ClipOval(
-          child: Container(
-        height: dotSize,
-        width: dotSize,
-        decoration: BoxDecoration(border: Border.all(width: 1,color: Colors.grey)),
-      )),
+          child: CircleAvatar(
+            child: Container(
+                  height: dotSize,
+                  width: dotSize,
+                  decoration: BoxDecoration(
+                   
+                  ),
+                  
+                ),
+          )),
     );
   }
 
