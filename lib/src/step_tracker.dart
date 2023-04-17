@@ -81,12 +81,17 @@ class StepTracker extends StatelessWidget {
           size: circleSize / 1.1,
         );
       case TrackerState.none:
-        return Text(
-          (index + 1).toString(),
-          style: TextStyle(
-              fontWeight: FontWeight.w600,
-              color: Colors.grey.withOpacity(0.8)),
-        );
+        return ClipOval(
+            child: Align(
+              heightFactor: 2,
+              widthFactor: 1,
+          child: Text(
+            (index + 1).toString(),
+            style: TextStyle(
+                fontWeight: FontWeight.w600,
+                color: Colors.grey.withOpacity(0.8)),
+          ),
+        ));
     }
   }
 
