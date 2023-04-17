@@ -140,7 +140,7 @@ class StepTracker extends StatelessWidget {
         child: Container(
           height: circleSize,
           width: circleSize,
-          decoration: BoxDecoration(color: _circleColor(index),border: Border.all(width: 1,color: Colors.grey)),
+          decoration: BoxDecoration(color: _circleColor(index),border: Border.all(width: 2,color: Colors.grey)),
           child: Center(
             child: _buildCircleChild(index),
           ),
@@ -194,8 +194,8 @@ class StepTracker extends StatelessWidget {
     return ClipOval(
       child: ClipOval(
           child: Align(
-            heightFactor: 20,
-            widthFactor: 15,
+            heightFactor: 200,
+            widthFactor: 150,
             child: Container(
                   height: dotSize,
                   width: dotSize,
