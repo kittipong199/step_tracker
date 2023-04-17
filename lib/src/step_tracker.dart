@@ -194,8 +194,8 @@ class StepTracker extends StatelessWidget {
     return ClipOval(
       child: ClipOval(
           child: Align(
-            heightFactor: 2.5,
-            widthFactor: 1,
+            heightFactor: 20,
+            widthFactor: 15,
             child: Container(
                   height: dotSize,
                   width: dotSize,
