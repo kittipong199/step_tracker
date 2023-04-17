@@ -104,7 +104,7 @@ class StepTracker extends StatelessWidget {
       case TrackerState.disabled:
         return unSelectedColor;
       case TrackerState.none:
-        return Colors.white.withOpacity(0.5);
+        return Color.fromARGB(255, 192, 40, 40).withOpacity(0.5);
     }
   }
 
