@@ -132,14 +132,12 @@ class StepTracker extends StatelessWidget {
 
     // เส้นขอบ
   Widget _buildCircle(int index) => ClipOval(
-        child: CircleAvatar(
-          child: Container(
-            height: circleSize,
-            width: circleSize,
-            decoration: BoxDecoration(color: _circleColor(index),border: Border.all(width: 4,color: Colors.grey)),
-            child: Center(
-              child: _buildCircleChild(index),
-            ),
+        child: Container(
+          height: circleSize,
+          width: circleSize,
+          decoration: BoxDecoration(color: _circleColor(index),border: Border.all(width: 1,color: Colors.grey)),
+          child: Center(
+            child: _buildCircleChild(index),
           ),
         ),
       );
@@ -190,14 +188,13 @@ class StepTracker extends StatelessWidget {
   Widget _buildDot(int index) {
     return ClipOval(
       child: ClipOval(
-          child: CircleAvatar(
+          child: Align(
+            heightFactor: 0.7,
+            widthFactor: 0.5,
             child: Container(
                   height: dotSize,
                   width: dotSize,
-                  decoration: BoxDecoration(
-                   
-                  ),
-                  
+                  decoration: BoxDecoration(color: _circleColor(index)),
                 ),
           )),
     );
